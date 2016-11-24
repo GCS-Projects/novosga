@@ -8,8 +8,14 @@ env:
   - DB=mysql
   - DB=pgsql
 
-install:
+
+before_install:
+  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'create database IF NOT EXISTS phprs;' -uroot; fi"
+  - sh -c "if [ '$DB' = 'pgsql' ]; then psql -c 'CREATE DATABASE IF EXISTS phprs;' -U postgres; fi"
+
+before_script:
+  - composer self-update
   - composer install
 
 script: 
-  - phpunit src/Novosga/Test/Test.php
+  - phpunit src/Novosga/Test/TestConectionDB_$DB.php
