@@ -3,7 +3,7 @@
 		
 		public function testConectionWithDB() {
 			$conection = NULL;
-			$conection = mysql_connect("172.17.0.2", "root", "phprs");
+			$conection = mysqli_connect("172.17.0.2", "root", "phprs");
 			if (!$conection) {
 				$this->assertTrue(false);
 			} else {
