@@ -3,7 +3,7 @@
 		
 		public function testConectionWithDB() {
 			
-			DEFINE('DB_SERVER', '172.17.0.2');
+			DEFINE('DB_SERVER', '127.0.0.1');
 			DEFINE('DB_USERNAME', 'root');
 			DEFINE('DB_PASSWORD', 'phprs');
 			DEFINE('DB_DATABASE', 'phprs');
