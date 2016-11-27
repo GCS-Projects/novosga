@@ -6,7 +6,7 @@
 			$conection = pg_connect("host=localhost dbname=test user=postgres");
 
 			if ($conection) {
-			   	pg_close ($conexao);
+			   	pg_close ($conection);
 				$this->assertTrue(true);
 			} else {
 			   	$this->assertTrue(false);
