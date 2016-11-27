@@ -3,7 +3,7 @@
 		
 		public function testConectionWithDB() {
 			$conection = NULL;
-			$conection = pg_connect("host=172.17.0.2 dbname=phprs port=3360 user=root password=phprs");
+			$conection = pg_connect("host=localhost dbname=test user=postgres");
 
 			if ($conection) {
 			   	pg_close ($conexao);
