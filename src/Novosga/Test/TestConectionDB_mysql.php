@@ -9,7 +9,7 @@
 			if (!$conection) {
 				$this->assertTrue(false);
 			} else {
-				mysql_close($conection); 
+				mysqli_close($conection); 
 				$this->assertTrue(true);
 			}
 	  	}
