@@ -10,9 +10,9 @@ env:
 
 
 before_install:
-  - sh -c "if [ "$DB" == "pgsql" ]; then psql -c 'DROP DATABASE IF EXISTS test;' -U postgres; fi"  
-  - sh -c "if [ "$DB" == "pgsql" ]; then psql -c 'create database test;' -U postgres; fi"
-  - sh -c "if [ "$DB" == "mysql" ]; then mysql -e 'create database IF NOT EXISTS test;' -uroot; fi"
+  - sh -c "if [ '$DB' = 'pgsql' ]; then psql -c 'DROP DATABASE IF EXISTS test;' -U postgres; fi"
+  - sh -c "if [ '$DB' = 'pgsql' ]; then psql -c 'create database test;' -U postgres; fi"
+  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'create database IF NOT EXISTS test;'; fi"
 
 before_script:
   - composer self-update
